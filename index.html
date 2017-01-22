@@ -97,7 +97,7 @@
     <!-- header section are over -->
 
     <!-- header menu -->
-    <div class="header-menu">
+    <div  class="header-menu">
         <div class="container">
             <div class="row">
                 <div class="header-menu-logo col-xs-12 col-sm-2">
@@ -107,13 +107,13 @@
                 </div>
                 <div class="header-menu-sub col-xs-12 col-sm-10">
                     <ul>
-                        <li><a href="#home">HOME</a></li>
-                        <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#services">SERVICES</a></li>
-                        <li><a href="#portfolio">PORTFOLIO</a></li>
-                        <li><a href="#skills">SKILLS</a></li>
-                        <li><a href="#gallery">GALLERY</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
+                        <li><a class="page-scroll" href="#home">HOME</a></li>
+                        <li><a class="page-scroll" href="#about">ABOUT</a></li>
+                        <li><a class="page-scroll" href="#services">SERVICES</a></li>
+                        <li><a class="page-scroll" href="#portfolio">PORTFOLIO</a></li>
+                        <li><a class="page-scroll" href="#skills">SKILLS</a></li>
+                        <li><a class="page-scroll" href="#gallery">GALLERY</a></li>
+                        <li><a class="page-scroll" href="#contact">CONTACT</a></li>
                     </ul>
                 </div>
 
@@ -203,7 +203,7 @@
                             Web design is a process of conceptualizing, planning, and building a collection of electronic files that determine the layout, colors, text styles, structure, graphics, images, and use of interactive features that
                             deliver pages to your site visitors.
                         </p>
-                     </div>
+                    </div>
                     <div class="col-xs-12 col-md-6">
                         <img class="service-images" src="images/design.jpg" alt="design">
                     </div>
@@ -261,7 +261,7 @@
                     <div class="col-xs-12 col-sm-4">
                         <img src="images/stake.png" class="img-responsive  animated rollIn" alt="stake">
                         <div class="pic">
-                           <div class="text"> STAKE OVER FLOW WEBPAGE </div>
+                            <div class="text"> STAKE OVER FLOW WEBPAGE </div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-4">
@@ -402,17 +402,17 @@
                 <div class="gallery-images gallery-section-sub2 col-xs-12">
                     <div  class="cf5 over col-xs-12 col-sm-4">
                         <img src="images/gallery-images1.jpg" class="img-responsive  bottom shadow"
-                         alt="bhadar-dem-images">
+                        alt="bhadar-dem-images">
                         <img src="images/gallery-images2.jpg" class="img-responsive  top shadow" alt="somnath-dem-images">
                     </div>
 
                     <div class="cf5 over col-xs-12 col-sm-4">
                         <img src="images/gallery-images3.jpg" class="img-responsive  bottom shadow"
-                         alt="somnath-dem-images">
+                        alt="somnath-dem-images">
                         <img src="images/gallery-images4.jpg" class="img-responsive  top shadow" alt="somnath-dem-images">
                     </div>
 
-                     <div class="cf5 over col-xs-12 col-sm-4 gallery-section-perent3 ">
+                    <div class="cf5 over col-xs-12 col-sm-4 gallery-section-perent3 ">
                         <img src="images/gallery-images5.jpg" class="img-responsive  bottom shadow" alt="marvadi-collage-images">
                         <img src="images/gallery-images6.jpg" class="img-responsive  top shadow" alt="bhadar-dem-images">
                     </div>
@@ -420,7 +420,7 @@
                     <div class="cf5 hover col-xs-12 col-sm-4">
                         <img src="images/gallery-images7.jpg" class="img-responsive  bottom shadow" alt="bhadar-dem-images">
                         <img src="images/gallery-images8.jpg" class="img-responsive  top
-                         shadow" alt="rk-univercity-images">
+                        shadow" alt="rk-univercity-images">
                     </div>
 
                     <div class="cf5 over col-xs-12 col-sm-4">
@@ -495,6 +495,26 @@
     <script src="js/jquery-validate.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcbJuNBALzcrO2fZ1t6YETXOe-Jg67Xs&callback=myMap" >
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    $(window).scroll(function() {
+        if ($(".header-menu").offset().top > 50) {
+            $(".navbar-fixed-top").addClass("top-nav-collapse");
+        } else {
+            $(".navbar-fixed-top").removeClass("top-nav-collapse");
+        }
+    });
+    $(function() {
+        $('a.page-scroll').bind('click', function(event) {
+            console.log("s");
+            var $anchor = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top
+            }, 1500, 'easeInOutExpo');
+            event.preventDefault();
+        });
+    });
+    </script>
 
     <script>
     $('#contact-form').submit(function(event) {
@@ -544,5 +564,5 @@
         });
     });
     </script>
- </body>
+</body>
 </html>
